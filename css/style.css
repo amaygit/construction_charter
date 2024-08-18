@@ -73,13 +73,23 @@ body {
 }
 
 .logo {
-  width: 12.5rem;
-  height: 12.55rem;
+  /* width: 12.5rem;
+  /* height: auto; */
+  /* height: 12.5rem; */
+  /* cursor: pointer; */ 
+  width: 12.5rem; /* Default width */
+  height: auto;   /* Maintain aspect ratio */
   cursor: pointer;
+  display: block; /* Ensure it behaves as a block element for centering */
+  margin: 0 auto; /* Center horizontally */
 }
 @media only screen and (max-width: 50em) {
   .logo {
-    margin-left: 2rem;
+ width: 15rem; /* Increased width for smaller screens */
+    height: auto; /* Auto height to maintain aspect ratio */
+    max-height: 15rem; /* Optional: Set a max-height to ensure it doesn’t get too tall */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
   }
 }
 
@@ -322,6 +332,9 @@ body {
   background-size: cover;
   background-color: #fff;
   overflow: hidden;
+  display: flex;
+   align-items: center;
+  justify-content: center;
 }
 .header__menu-bar {
   display: flex;
@@ -458,6 +471,43 @@ body {
 }
 .header__form-input::placeholder {
   color: #9c9c9c;
+}
+/* General Footer Contact Section Styling */
+.footer__contact {
+  margin: 1rem 0;
+  flex: 1; /* Ensure it takes available space */
+}
+
+/* WhatsApp Button Styling */
+.footer__whatsapp-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.4rem;
+  color: var(--color-white); /* White text color from CSS variables */
+  background-color: var(--color-primary); /* Green background from CSS variables */
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer__whatsapp-button:hover {
+  background-color: var(--color-primary-dark); /* Darker green on hover */
+}
+
+/* Mobile Optimizations */
+@media only screen and (max-width: 50em) {
+  .footer__contact {
+    flex-basis: 100%; /* Full width on small screens */
+    text-align: center; /* Center button text on mobile */
+  }
+
+  .footer__whatsapp-button {
+    width: 100%; /* Full width on small screens */
+    font-size: 1.2rem; /* Slightly smaller font size on mobile */
+  }
 }
 
 .footer {
